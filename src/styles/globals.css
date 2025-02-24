@@ -2,20 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 在 globals.css 或相應的 CSS 模塊文件中 */
+.justify-text {
+  text-align: justify;
+  text-align-last: center; /* 這會使最後一行文字置中 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 或者使用 Tailwind 的 @layer 指令來擴展你的工具類 */
+@layer utilities {
+  .justify-text {
+    @apply text-justify;
+    text-align-last: center;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* styles.css */
+/* body.no-scroll {
+  overflow: hidden;
 }
+
+.drawer-open {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.drawer-content {
+  height: 100%;
+  overflow-y: auto;
+} */
