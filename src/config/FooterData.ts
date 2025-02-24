@@ -4,15 +4,18 @@ const LinkData = [
     itemList: [
       {
         title: '社群',
-        link: '/community'
+        link: '/community',
+        disabled: true
       },
       {
         title: '交易所',
-        link: '/exchange'
+        link: '/exchange',
+        disabled: true
       },
       {
         title: '關於我們',
-        link: '/about'
+        link: '/about',
+        disabled: true
       }
     ]
   },
@@ -41,15 +44,18 @@ const LinkData = [
     itemList: [
       {
         title: '幣友合夥人計畫',
-        link: '/cooperate/partners'
+        link: '/cooperate/partners',
+        disabled: true
       },
       {
         title: '聯絡我們',
-        link: '/contact'
+        link: '/contact',
+        disabled: true
       },
       {
         title: '官方驗證',
-        link: '/verify'
+        link: '/verify',
+        disabled: true
       },
       {
         title: '常見問題',
@@ -63,11 +69,13 @@ const LinkData = [
     itemList: [
       {
         title: '市場行情',
-        link: '/market'
+        link: '/market',
+        disabled: true
       },
       {
         title: '恐懼與貪婪指數',
-        link: '/market/FearAndGreed'
+        link: '/market/FearAndGreed',
+        disabled: true
       }
     ]
   },
@@ -76,7 +84,8 @@ const LinkData = [
     itemList: [
       {
         title: 'API',
-        link: '/doc/api'
+        link: '/doc/api',
+        disabled: true
       }
     ]
   }
@@ -84,35 +93,25 @@ const LinkData = [
 
 const IconData = [
   {
-    link: 'https://www.facebook.com/bityo.tw',
-    icon: 'faFacebookF',
-    size: 'w-3'
-  },
-  {
-    link: 'https://www.instagram.com/bityo.tw/',
+    link: 'https://www.instagram.com/runsun2025/',
     icon: 'faInstagram',
     size: 'w-4'
   },
   {
-    link: 'https://www.tiktok.com/@bityo.tw',
-    icon: 'faTiktok',
+    link: 'https://dc.sunary.tw',
+    icon: 'faDiscord',
     size: 'w-4'
   },
   {
-    link: 'httphttps://youtube.com/@bityo_tw',
-    icon: 'faYoutube',
+    link: 'https://line.sunary.tw',
+    icon: 'faLine',
     size: 'w-4'
   },
   {
-    link: 'https://github.com/bityo-Official',
+    link: 'https://github.com/Sunary-Trading',
     icon: 'faGithub',
     size: 'w-4'
   },
-  {
-    link: 'https://discord.gg/bityo',
-    icon: 'faDiscord',
-    size: 'w-4'
-  }
 ];
 
 export { LinkData, IconData };;
