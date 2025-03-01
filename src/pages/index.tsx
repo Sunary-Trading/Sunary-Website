@@ -48,12 +48,14 @@ const Home = () => {
                   text="查看更多（不可用）">
                   <InformationCircleIcon className="w-5 mr-1"></InformationCircleIcon>
                 </Button> */}
-                <Button
-                  onClick={() => router.push('https://dc.sunary.tw')}
-                  className="rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
-                  text="加入 Discord">
-                  <FontAwesomeIcon icon={faDiscord} className='mr-1 w-5' />
-                </Button>
+                <a href="https://dc.sunary.tw" target="_blank">
+                  <Button
+                    onClick={() => {}}
+                    className="rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                    text="加入 Discord">
+                    <FontAwesomeIcon icon={faDiscord} className='mr-1 w-5' />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

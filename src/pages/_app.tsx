@@ -44,7 +44,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     <ThemeProvider attribute="class" defaultTheme="dark">
       <div className={`transition-opacity duration-500 ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}>
         <Layout>
-          <NextNProgress height={2} color="#17FFAC" options={{ easing: 'ease', speed: 500 }} />
+          <NextNProgress height={2} color="#DA9060" options={{ easing: 'ease', speed: 500 }} />
           <TailwindToaster />
           <Component {...pageProps} />
         </Layout>

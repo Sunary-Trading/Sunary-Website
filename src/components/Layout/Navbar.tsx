@@ -72,14 +72,14 @@ const Navbar = () => {
             <div className="flex flex-1 sm:items-stretch sm:justify-start">
               <div className="flex flex-shrink-0 items-center">
                 <button onClick={() => router.push('/')}>
-                  {/* <Image
-                    src="/icon/bityo_with_icon.png"
+                  <Image
+                    src="/icon/sunary_with_icon.png"
                     alt="about-image"
                     width={1920}
-                    height={1920}
+                    height={1000}
                     className="h-8 w-auto drop-shadow-three dark:drop-shadow-none lg:mr-0"
-                  /> */}
-                  逐日交易聯盟
+                  />
+                  {/* 逐日交易聯盟 */}
                 </button>
               </div>
             </div>

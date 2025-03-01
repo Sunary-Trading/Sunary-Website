@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import BityoLogo from "@/images/icon/bityo_with_icon.png";
+import SunaryLogo from "@/images/icon/sunary_with_icon.png";
 import { LinkData, IconData } from "@/config/FooterData";
 
 const fabIcons = require("@fortawesome/free-brands-svg-icons");
@@ -20,11 +20,11 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src={BityoLogo}
+                    src={SunaryLogo}
                     alt="logo"
                     className="w-full"
                     width={140}
-                    height={30}
+                    height={140}
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body dark:text-body-dark">

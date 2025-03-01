@@ -10,7 +10,7 @@ import {
   Card,
 } from "@material-tailwind/react";
 import { SidebarListItemProps, SidebarProps } from "@/types/Sidebar/Sidebar";
-import BityoIcon from "@/images/icon/bityo.png";
+import SunaryIcon from "@/images/icon/sunary_with_icon.png";
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import AlertCard from "../Alert/AlertCard";
@@ -114,13 +114,13 @@ const Sidebar = (props: SidebarProps) => {
             }}
           >
             <Image
-              src={BityoIcon}
+              src={SunaryIcon}
               alt="Bityo"
-              className="h-8 w-8"
+              className=""
             />
-            <Typography variant="h5" className="text-black dark:text-white" nonce={undefined} onResize={undefined} onResizeCapture={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-              Bityo
-            </Typography>
+            {/* <Typography variant="h5" className="text-black dark:text-white" nonce={undefined} onResize={undefined} onResizeCapture={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+              Sunary
+            </Typography> */}
           </button>
           <List nonce={undefined} onResize={undefined} onResizeCapture={undefined} className="dark:text-blue-gray-100" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             {
