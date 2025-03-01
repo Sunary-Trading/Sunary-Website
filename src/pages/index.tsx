@@ -40,6 +40,21 @@ const Home = () => {
                   【注重長期獲利的CRYPTO現貨團隊】交易心態｜現貨介紹｜長期套利逐日 to the sun☀
                 </p>
               </div>
+              <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                {/* <Button
+                  onClick={() => router.push('/about')}
+                  className="rounded-sm bg-web-green px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-web-green/80 disabled:bg-web-green/60"
+                  disabled
+                  text="查看更多（不可用）">
+                  <InformationCircleIcon className="w-5 mr-1"></InformationCircleIcon>
+                </Button> */}
+                <Button
+                  onClick={() => router.push('https://dc.sunary.tw')}
+                  className="rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                  text="加入 Discord">
+                  <FontAwesomeIcon icon={faDiscord} className='mr-1 w-5' />
+                </Button>
+              </div>
             </div>
           </div>
         </div>

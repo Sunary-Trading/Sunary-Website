@@ -80,8 +80,8 @@ const Footer = () => {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body dark:text-white">
-              © 2025 幣友 Bityo. ｜ All Rights Reserved. <br />
-              © 2025 逐日交易聯盟 Sunary Trading ｜ All Rights Reserved.
+              © 2025 逐日交易聯盟 Sunary Trading ｜ All Rights Reserved. <br />
+              © 2025 幣友科技 BITYO Tech.（開發） ｜ All Rights Reserved.
             </p>
           </div>
         </div>

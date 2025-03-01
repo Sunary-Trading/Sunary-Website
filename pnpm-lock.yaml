@@ -38,9 +38,6 @@ dependencies:
   '@types/pako':
     specifier: ^2.0.3
     version: 2.0.3
-  '@types/swagger-ui-react':
-    specifier: ^4.18.3
-    version: 4.18.3
   '@typescript-eslint/parser':
     specifier: ^8.0.0
     version: 8.0.0(eslint@8.57.0)(typescript@5.5.4)
@@ -2175,12 +2172,6 @@ packages:
   /@types/swagger-jsdoc@6.0.4:
     resolution: {integrity: sha512-W+Xw5epcOZrF/AooUM/PccNMSAFOKWZA5dasNyMujTwsBkU74njSJBpvCCJhHAJ95XRMzQrrW844Btu0uoetwQ==}
     dev: true
-
-  /@types/swagger-ui-react@4.18.3:
-    resolution: {integrity: sha512-Mo/R7IjDVwtiFPs84pWvh5pI9iyNGBjmfielxqbOh2Jv+8WVSDVe8Nu25kb5BOuV2xmGS3o33jr6nwDJMBcX+Q==}
-    dependencies:
-      '@types/react': 18.3.3
-    dev: false
 
   /@types/tough-cookie@4.0.5:
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}

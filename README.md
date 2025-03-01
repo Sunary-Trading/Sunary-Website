@@ -1,5 +1,5 @@
-# Docs of Bityo Website
-A bot introduction website.
+# Docs of Sunary Website
+Sunary Official Website
 Here we are going to explain this docs.
 
 ## What dependencies pkgs it needs
@@ -8,7 +8,6 @@ Here we are going to explain this docs.
 * React
 * Tailwind
 * Font Awesome
-* Firebase
 
 ## How to run(Hot-Reloading)
 ### if you use npm
@@ -46,6 +45,6 @@ $ npm run build
 ```
 
 ## More information
-* [Official Webiste](https://bityo.tw)
-* [Our Discord](https://dc.bityo.tw)
-* [Our Line](https://line.bityo.tw)
+* [Official Webiste](https://sunary.tw)
+* [Our Discord](https://dc.sunary.tw)
+* [Our Line](https://line.sunary.tw)
