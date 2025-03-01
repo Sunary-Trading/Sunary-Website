@@ -13,17 +13,17 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>{SEO.NotFound.title}</title>
-        <meta name="description" content={SEO.NotFound.description} />
-        <meta property="og:title" content={SEO.NotFound.title} />
-        <meta property="og:description" content={SEO.NotFound.description} />
-        <meta property="og:image" content={SEO.NotFound.image} />
+        <title>{SEO.Index.title}</title>
+        <meta name="description" content={SEO.Index.description} />
+        <meta property="og:title" content={SEO.Index.title} />
+        <meta property="og:description" content={SEO.Index.description} />
+        <meta property="og:image" content={SEO.Index.image} />
         {/* <meta property="og:url" content={`https://yourdomain.com/post/${post.frontMatter.id}`} /> */}
-        <meta property="og:type" content={SEO.NotFound.type} />
+        <meta property="og:type" content={SEO.Index.type} />
         {/* <meta name="twitter:card" content="summary_large_image" /> */}
-        <meta name="twitter:title" content={SEO.NotFound.title} />
-        <meta name="twitter:description" content={SEO.NotFound.description} />
-        <meta name="twitter:image" content={SEO.NotFound.image} />
+        <meta name="twitter:title" content={SEO.Index.title} />
+        <meta name="twitter:description" content={SEO.Index.description} />
+        <meta name="twitter:image" content={SEO.Index.image} />
       </Head>
       <section
         id="home"
