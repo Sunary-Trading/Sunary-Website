@@ -4,7 +4,7 @@ import Layout from '@/components/Layout/Layout';
 import type { AppProps } from 'next/app'
 import NextNProgress from "nextjs-progressbar";
 import { config } from '@fortawesome/fontawesome-svg-core'
-import TailwindToaster from '@/components/Toast/Toast';
+// import TailwindToaster from '@/components/Toast/Toast';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -45,7 +45,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <div className={`transition-opacity duration-500 ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}>
         <Layout>
           <NextNProgress height={2} color="#DA9060" options={{ easing: 'ease', speed: 500 }} />
-          <TailwindToaster />
+          {/* <TailwindToaster /> */}
           <Component {...pageProps} />
         </Layout>
       </div>
