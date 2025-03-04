@@ -10,8 +10,7 @@ import {
   Card,
 } from "@material-tailwind/react";
 import { SidebarListItemProps, SidebarProps } from "@/types/Sidebar/Sidebar";
-import SunaryIcon from "@/images/icon/sunary_with_icon.png";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import AlertCard from "../Alert/AlertCard";
 import toast from "react-hot-toast";
@@ -44,29 +43,27 @@ const SidebarListItem = (props: SidebarListItemProps) => {
         <props.icon className="h-5 w-5" />
       </ListItemPrefix>
       {props.text}
-      {
-        props.chip && (
-          <ListItemSuffix
-            nonce={undefined}
-            onResize={undefined}
-            onResizeCapture={undefined}
-            placeholder={undefined}
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
-          >
-            <Chip
-              value={props.chip.value}
-              size={props.chip.size}
-              variant="ghost"
-              color={props.chip.color}
-              className="rounded-full"
-            />
-          </ListItemSuffix>
-        )
-      }
+      {props.chip && (
+        <ListItemSuffix
+          nonce={undefined}
+          onResize={undefined}
+          onResizeCapture={undefined}
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+        >
+          <Chip
+            value={props.chip.value}
+            size={props.chip.size}
+            variant="ghost"
+            color={props.chip.color}
+            className="rounded-full"
+          />
+        </ListItemSuffix>
+      )}
     </ListItem>
-  )
-}
+  );
+};
 
 const Sidebar = (props: SidebarProps) => {
   const [open, setOpen] = React.useState(0);
@@ -84,13 +81,14 @@ const Sidebar = (props: SidebarProps) => {
 
   const openDrawer = () => setIsDrawerOpen(true);
   const closeDrawer = () => {
-    setIsDrawerOpen(false)
+    setIsDrawerOpen(false);
     props.setIsDrawerOpen(false);
   };
 
   return (
     <>
-      <Drawer open={isDrawerOpen}
+      <Drawer
+        open={isDrawerOpen}
         onClose={closeDrawer}
         nonce={undefined}
         onResize={undefined}
@@ -100,45 +98,64 @@ const Sidebar = (props: SidebarProps) => {
         transition={{ type: "spring", duration: 0.8 }}
         overlayProps={{
           className: "fixed",
-          onClick: closeDrawer
-        }} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}      >
+          onClick: closeDrawer,
+        }}
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+      >
         <Card
           color="transparent"
           shadow={false}
-          className="h-full w-full p-4 overflow-y-auto" nonce={undefined} onResize={undefined} onResizeCapture={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          className="h-full w-full p-4 overflow-y-auto"
+          nonce={undefined}
+          onResize={undefined}
+          onResizeCapture={undefined}
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+        >
           <button
             className="mb-2 flex items-center gap-4 p-4"
             onClick={() => {
-              router.push('/');
+              router.push("/");
               closeDrawer();
             }}
           >
             <Image
-              src={SunaryIcon}
-              alt="Bityo"
+              src="https://cdn.sunary.tw/sunary_with_icon.png"
+              alt="逐日團隊"
+              width={1920}
+              height={1000}
               className=""
             />
             {/* <Typography variant="h5" className="text-black dark:text-white" nonce={undefined} onResize={undefined} onResizeCapture={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
               Sunary
             </Typography> */}
           </button>
-          <List nonce={undefined} onResize={undefined} onResizeCapture={undefined} className="dark:text-blue-gray-100" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            {
-              props.ListData.map((item, index) => (
-                <SidebarListItem
-                  key={index}
-                  icon={item.icon}
-                  text={item.text}
-                  link={item.link}
-                  disabled={item.disabled}
-                  onClick={() => {
-                    item.onClick && item.onClick();
-                    closeDrawer();
-                  }}
-                  chip={item.chip}
-                />
-              ))
-            }
+          <List
+            nonce={undefined}
+            onResize={undefined}
+            onResizeCapture={undefined}
+            className="dark:text-blue-gray-100"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
+            {props.ListData.map((item, index) => (
+              <SidebarListItem
+                key={index}
+                icon={item.icon}
+                text={item.text}
+                link={item.link}
+                disabled={item.disabled}
+                onClick={() => {
+                  item.onClick && item.onClick();
+                  closeDrawer();
+                }}
+                chip={item.chip}
+              />
+            ))}
           </List>
           <AlertCard
             icon={"symbol"}
@@ -148,24 +165,24 @@ const Sidebar = (props: SidebarProps) => {
             onClose={() => setOpenAlert(false)}
             leftBtn={{
               text: "取消",
-              onClick: () => setOpenAlert(false)
+              onClick: () => setOpenAlert(false),
             }}
             rightBtn={{
               text: "了解更多",
               onClick: () => {
                 toast.error("此功能尚未開放！\n敬請期待", {
                   duration: 2000,
-                  position: 'top-left',
-                })
-                router.push('/cooperate/partners');
+                  position: "top-left",
+                });
+                router.push("/cooperate/partners");
                 closeDrawer();
-              }
+              },
             }}
           />
         </Card>
       </Drawer>
     </>
   );
-}
+};
 
 export default Sidebar;

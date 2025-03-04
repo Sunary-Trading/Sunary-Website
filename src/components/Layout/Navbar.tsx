@@ -73,8 +73,8 @@ const Navbar = () => {
               <div className="flex flex-shrink-0 items-center">
                 <button onClick={() => router.push('/')}>
                   <Image
-                    src="/icon/sunary_with_icon.png"
-                    alt="about-image"
+                    src="https://cdn.sunary.tw/sunary_with_icon.png"
+                    alt="逐日交易聯盟"
                     width={1920}
                     height={1000}
                     className="h-8 w-auto drop-shadow-three dark:drop-shadow-none lg:mr-0"
