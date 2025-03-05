@@ -27,13 +27,8 @@ const config = withMT({
         'h6': ['1.75rem', '2.625rem'],
       },
       colors: {
-<<<<<<< HEAD
-        "web-green": "#4ECE80",
-        "bityo": "#DA9060",
-=======
         "web-green": "#DA9060",
-        "bityo": "#17FFAD",
->>>>>>> 5c2c028c5fcc58dd320b95c7d64108b3fe9c0e5b
+        "bityo": "#4ECE80",
         "body": "#788293",
         "body-dark": "rgb(149,156,177",
         "txt-dark": "rgba(41,44,53)",
