@@ -8,6 +8,11 @@ const LinkData = [
         disabled: true
       },
       {
+        title: '課程表',
+        link: '/agenda',
+        disabled: false
+      },
+      {
         title: '交易所',
         link: '/exchange',
         disabled: true
