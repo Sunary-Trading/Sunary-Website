@@ -49,7 +49,7 @@ const Navbar = () => {
     {
       text: "交易所",
       icon: CurrencyDollarIcon,
-      disabled: true,
+      disabled: false,
       link: "/exchange",
     },
     {
