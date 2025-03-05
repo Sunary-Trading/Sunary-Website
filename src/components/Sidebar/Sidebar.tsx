@@ -157,7 +157,7 @@ const Sidebar = (props: SidebarProps) => {
               />
             ))}
           </List>
-          <AlertCard
+          {/* <AlertCard
             icon={"symbol"}
             title="幣友合夥人計畫"
             description="加入幣友，成為合夥人，可以獲取高額反傭，還有更多福利等你來拿。"
@@ -178,7 +178,7 @@ const Sidebar = (props: SidebarProps) => {
                 closeDrawer();
               },
             }}
-          />
+          /> */}
         </Card>
       </Drawer>
     </>

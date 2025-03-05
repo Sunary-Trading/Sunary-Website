@@ -30,6 +30,12 @@ const Navbar = () => {
       disabled: true,
       link: "/account",
     },
+    {
+      text: "課程表",
+      icon:  PresentationChartBarIcon,
+      disabled: false,
+      link: "/agenda",
+    },
     // {
     //   text: "市場行情",
     //   icon: ChartBarSquareIcon,
