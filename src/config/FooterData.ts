@@ -15,7 +15,7 @@ const LinkData = [
       {
         title: '交易所',
         link: '/exchange',
-        disabled: true
+        disabled: false
       },
       {
         title: '關於我們',
