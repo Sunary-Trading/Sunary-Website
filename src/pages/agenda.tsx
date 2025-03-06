@@ -130,14 +130,14 @@ const Agenda: React.FC = () => {
           {/* Desktop View */}
           <div className="mx-auto hidden lg:grid gap-y-4 text-white">
             <div
-              className="grid sticky top-0 pt-[20px] z-20 bg-[#131313]"
+              className="grid sticky top-0 pt-[20px] z-20 dark:bg-[#131313] bg-[#131313]/50"
               style={{ gridTemplateColumns }}
             >
-              <div className="py-2 pr-6 font-bold bg-[#131313]">日期</div>
+              <div className="py-2 pr-6 font-bold">日期</div>
               {speaker.map((speaker) => (
                 <div
                   key={speaker.id}
-                  className="py-2 px-5 text-center font-bold border-b border-opacity-30 bg-[#131313] flex flex-row justify-center items-center"
+                  className="py-2 px-5 text-center font-bold border-b border-opacity-30 flex flex-row justify-center items-center"
                 >
                   <Image
                     src={speaker.avatar}
@@ -155,7 +155,7 @@ const Agenda: React.FC = () => {
 
             {sessionsByDate.map(([date, sessions]) => (
               <div key={date} className="grid" style={{ gridTemplateColumns }}>
-                <div className="py-2 pr-6 font-bold flex items-center">
+                <div className="py-2 pr-6 font-bold flex items-center text-black dark:text-white">
                   {date}
                 </div>
                 {speaker.map((speaker) => (

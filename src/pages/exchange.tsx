@@ -23,9 +23,9 @@ const exchange = () => {
       <section className="p-5 sm:pt-10 sm:px-10 sm:pb-20">
         <H2 className="text-center" title="逐日合作的交易所" />
         <p className="text-base text-center text-body dark:text-body-dark">提供市場最低手續費減免反傭</p>
-        <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 lg:gap-x-8 "> { /* xl:grid-cols-3 */}
+        <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 "> { /* xl:grid-cols-3 */}
           <IntroCard
-            title="Bitunix - 合約交易所"
+            title="Bitunix - 合約交易所（推薦）"
             img="/background/bitunix.webp"
             link="https://sunary.tw/bitunix"
             type={{
@@ -37,7 +37,7 @@ const exchange = () => {
               <List text="全球衍生品交易量Top20交易所" />
               <List text="US/CA/PH MSB合規牌照及Cobo安全託管" />
               <List text="2023杜拜未來區塊鏈峰會黃金贊助商" />
-              <List text="七折手續費減免" />
+              <List text="八折手續費減免" />
             </IntroCard.Description>
             <IntroCard.Footer
               data={[
@@ -55,7 +55,7 @@ const exchange = () => {
             />
           </IntroCard>
           <IntroCard
-            title="XT - 合約交易所"
+            title="XT - 合約交易所（推薦）"
             img="https://cdn.sunary.tw/xt_exchange.png"
             link="https://sunary.tw/xt"
             type={{
@@ -67,7 +67,7 @@ const exchange = () => {
               <List text="全球衍生品交易量Top10交易所" />
               <List text="一個平台，滿足你所有投資需求" />
               <List text="多種交易產品，助你靈活應對市場波動" />
-              <List text="全方位安全保護，放心交易" />
+              <List text="八折手續費減免" />
             </IntroCard.Description>
             <IntroCard.Footer
               data={[
@@ -80,36 +80,6 @@ const exchange = () => {
                   title: "手續費減免",
                   description: "20%/20%",
                   link: "https://sunary.tw/xt",
-                }
-              ]}
-            />
-          </IntroCard>
-          <IntroCard
-            title="MEXC - 合約交易所"
-            img="https://cdn.sunary.tw/mexc.jpg"
-            link="https://sunary.tw/mexc"
-            type={{
-              name: "合約交易所",
-              bgColor: "bg-web-green",
-            }}
-          >
-            <IntroCard.Description>
-              <List text="全球衍生品交易量Top10交易所" />
-              {/* <List text="US/CA/PH MSB合規牌照及Cobo安全託管" />
-              <List text="2023杜拜未來區塊鏈峰會黃金贊助商" />
-              <List text="七折手續費減免" /> */}
-            </IntroCard.Description>
-            <IntroCard.Footer
-              data={[
-                {
-                  title: "專屬邀請碼",
-                  description: "mexc-sunary",
-                  link: "https://sunary.tw/mexc",
-                },
-                {
-                  title: "手續費減免",
-                  description: "5%/5%",
-                  link: "https://sunary.tw/mexc",
                 }
               ]}
             />

@@ -21,6 +21,11 @@ const LinkData = [
         title: '關於我們',
         link: '/about',
         disabled: true
+      },
+      {
+        title: '白皮書',
+        link: '/whitepaper',
+        disabled: true
       }
     ]
   },
@@ -65,21 +70,6 @@ const LinkData = [
       {
         title: '常見問題',
         link: '/question',
-        disabled: true
-      }
-    ]
-  },
-  {
-    title: '市場資料',
-    itemList: [
-      {
-        title: '市場行情',
-        link: '/market',
-        disabled: true
-      },
-      {
-        title: '恐懼與貪婪指數',
-        link: '/market/FearAndGreed',
         disabled: true
       }
     ]
