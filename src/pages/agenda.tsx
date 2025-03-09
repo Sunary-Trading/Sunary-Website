@@ -10,25 +10,9 @@ import data from "@/config/session.json";
 import Image from "next/image";
 import { useState } from "react";
 
-interface Session {
-  id: string;
-  title: string;
-  speaker: string;
-  speakerName: string;
-  date: string;
-  time: string;
-}
-
-interface Speaker {
-  id: string;
-  avatar: string;
-  name: string;
-}
-
-interface TimeSlot {
-  id: string;
-  index: number;
-}
+// Types
+import { Speaker } from "@/types/Card/Speaker";
+import { Session } from "@/types/Card/Session";
 
 const styleToText = (date: string): string => {
   const d = new Date(date);
@@ -54,18 +38,35 @@ const groupSessionsByDate = (sessions: Session[]) => {
   return Array.from(groups.entries()).sort();
 };
 
-const isDatePassed = (sessionDate: string): boolean => {
+const isDatePassed = (sessionDate: string, sessionTimeString: string): boolean => {
   const today = new Date();
   const [month, day] = sessionDate.split("/").map(Number);
   const sessionDateTime = new Date(today.getFullYear(), month - 1, day);
-  return today > sessionDateTime;
+  
+  // Get current time in hours and minutes
+  const currentHours = today.getHours();
+  const currentMinutes = today.getMinutes();
+  const currentTime = currentHours * 60 + currentMinutes;
+
+  // If date is different, compare dates
+  if (today.getDate() !== sessionDateTime.getDate() || 
+      today.getMonth() !== sessionDateTime.getMonth()) {
+    return today > sessionDateTime;
+  }
+
+  // If same date, compare time
+  const [sessionTimeStr] = sessionTimeString.split("-");
+  const [hours, minutes] = sessionTimeStr.split(":").map(Number);
+  const sessionTime = hours * 60 + minutes;
+
+  return currentTime > sessionTime;
 };
 
 const SessionCard: React.FC<{ session: Session; date: String }> = ({
   session,
   date,
 }) => {
-  const passed = isDatePassed(session.date);
+  const passed = isDatePassed(session.date, session.time);
 
   return (
     <div
@@ -130,14 +131,14 @@ const Agenda: React.FC = () => {
           {/* Desktop View */}
           <div className="mx-auto hidden lg:grid gap-y-4 text-white">
             <div
-              className="grid sticky top-0 pt-[20px] z-20 dark:bg-[#131313] bg-[#131313]/50"
+              className="grid sticky top-0 pt-[20px] z-20 bg-[#131313]"
               style={{ gridTemplateColumns }}
             >
-              <div className="py-2 pr-6 font-bold">日期</div>
+              <div className="py-2 pr-6 font-bold bg-[#131313]">日期</div>
               {speaker.map((speaker) => (
                 <div
                   key={speaker.id}
-                  className="py-2 px-5 text-center font-bold border-b border-opacity-30 flex flex-row justify-center items-center"
+                  className="py-2 px-5 text-center font-bold border-b border-opacity-30 bg-[#131313] flex flex-row justify-center items-center"
                 >
                   <Image
                     src={speaker.avatar}
@@ -155,7 +156,7 @@ const Agenda: React.FC = () => {
 
             {sessionsByDate.map(([date, sessions]) => (
               <div key={date} className="grid" style={{ gridTemplateColumns }}>
-                <div className="py-2 pr-6 font-bold flex items-center text-black dark:text-white">
+                <div className="py-2 pr-6 font-bold flex items-center">
                   {date}
                 </div>
                 {speaker.map((speaker) => (
@@ -238,7 +239,7 @@ const Agenda: React.FC = () => {
                           key={session.id}
                           className={`p-4 rounded-md shadow-md transition-all
                             ${
-                              isDatePassed(session.date)
+                              isDatePassed(session.date, session.time)
                                 ? "bg-gray-700 opacity-50"
                                 : "bg-gray-800"
                             }
@@ -256,13 +257,13 @@ const Agenda: React.FC = () => {
                             </span>
                           </div>
                           <h3 className="font-bold">
-                            {isDatePassed(session.date) ? (
+                            {isDatePassed(session.date, session.time) ? (
                               <del>{session.title}</del>
                             ) : (
                               session.title
                             )}
                           </h3>
-                          {isDatePassed(session.date) && (
+                          {isDatePassed(session.date, session.time) && (
                             <p className="text-xs text-gray-400 mt-2">已結束</p>
                           )}
                         </div>
