@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: SEO.Index.description,
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
