@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+<<<<<<< HEAD
+.pnp.js
+.yarn/install-state.gz
+=======
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+>>>>>>> 5fea7ac (Add initial project setup with Next.js, Tailwind CSS, and essential components)
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+<<<<<<< HEAD
+
+# local env files
+.env*.local
+.env
+=======
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+>>>>>>> 5fea7ac (Add initial project setup with Next.js, Tailwind CSS, and essential components)
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+<<<<<<< HEAD
+
+yarn.lock
+package-lock.json
+=======
+>>>>>>> 5fea7ac (Add initial project setup with Next.js, Tailwind CSS, and essential components)
