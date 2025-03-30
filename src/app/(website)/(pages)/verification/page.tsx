@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   ShieldCheck,
@@ -14,8 +14,9 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { type VerificationDetails as Details } from "@/data/verification";
 import { searchAccount } from "@/utils/verification";
+import Image from "next/image"; // Import Next.js Image component
 
-// Modal 組件
+// Modal component
 const DetailModal = ({
   isOpen,
   onClose,
@@ -83,7 +84,7 @@ export default function Verification() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDetails, setSelectedDetails] = useState<Details | null>(null);
 
-  const handleVerify = (code: string) => {
+  const handleVerify = useCallback((code: string) => {
     if (code.trim() === "") {
       setMessage("請輸入驗證碼");
       setStatus("error");
@@ -102,7 +103,7 @@ export default function Verification() {
       setMessage("請確認驗證碼或社交媒體帳號是否正確。");
       setStatus("error");
     }
-  };
+  }, [searchAccount]);
 
   useEffect(() => {
     const code = searchParams.get("code");
@@ -113,101 +114,103 @@ export default function Verification() {
   }, [searchParams, handleVerify]);
 
   return (
-    <div className="text-gray-100 min-h-screen">
-      <div className="container mx-auto px-4">
-        <div className="relative w-full min-h-screen flex flex-col justify-center items-center text-center">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold text-[#DA9060] flex items-center justify-center">
-              <ShieldCheck className="me-2" /> 官方帳戶驗證
-            </h1>
-          </div>
-
-          {/* 驗證表單 */}
-          <div className="w-full max-w-[600px] p-6 rounded-lg shadow-lg border border-gray-700">
-            <div>
-              <label
-                htmlFor="verification-code"
-                className="text-sm font-medium text-gray-300 mb-1 flex items-center"
-              >
-                <KeyFill className="me-2 text-[#DA9060]" /> 請輸入驗證碼
-              </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  id="verification-code"
-                  className="w-full px-4 py-2 ps-9 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DA9060] focus:border-transparent text-white placeholder-gray-400"
-                  value={verificationCode}
-                  onChange={(e) => {
-                    setVerificationCode(e.target.value);
-                    handleVerify(e.target.value); // 即時驗證
-                  }}
-                  placeholder="輸入驗證碼或社交媒體帳號"
-                />
-                <QrCode className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-              </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="text-gray-100 min-h-screen">
+        <div className="container mx-auto px-4">
+          <div className="relative w-full min-h-screen flex flex-col justify-center items-center text-center">
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold text-[#DA9060] flex items-center justify-center">
+                <ShieldCheck className="me-2" /> 官方帳戶驗證
+              </h1>
             </div>
 
-            {/* 回傳訊息顯示區域 */}
-            {message && (
-              <>
-                {status === "success" ? (
-                  <div className="mt-4 p-4 px-6 rounded-lg flex items-center bg-green-900/30 max-w-full">
-                    <CheckCircleFill className="me-5 scale-[2] text-green-400" />
-                    <div className="flex flex-col justify-start items-start flex-grow">
-                      <div className="font-medium text-green-400">驗證成功</div>
-                      <p className="text-green-300 opacity-90 break-words max-w-[88%] text-start">
-                        {message}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => {
-                        const account = searchAccount(verificationCode);
-                        if (account?.details) {
-                          setSelectedDetails(account.details);
-                          setIsModalOpen(true);
-                        }
-                      }}
-                      className="px-3 py-1 h-8 bg-[#DA9060] hover:bg-[#c27c4f] rounded-md text-sm flex items-center justify-center whitespace-nowrap"
-                    >
-                      <Info className="mr-2" /> 查看詳細
-                    </button>
-                  </div>
-                ) : (
-                  <div className="mt-4 p-4 px-6 rounded-lg flex items-center bg-red-900/30 max-w-full">
-                    <ExclamationTriangleFill className="me-5 scale-[2] text-red-400" />
-                    <div className="flex flex-col justify-start items-start">
-                      <div className="font-medium text-red-400">驗證失敗</div>
-                      <p className="text-red-300 opacity-90 break-words max-w-full">
-                        {message}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-
-          {/* 底部資訊區 */}
-          <div className="mt-12 flex flex-col items-center">
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#DA9060] to-transparent mb-6"></div>
-            <div className="flex items-center gap-4 text-gray-400 text-sm">
-              <div className="flex items-center px-3 py-2 rounded-md bg-gray-800/50 border border-gray-700">
-                <LockFill className="me-2 text-[#DA9060]" />
-                <span>支持官方</span>
+            {/* Verification form */}
+            <div className="w-full max-w-[600px] p-6 rounded-lg shadow-lg border border-gray-700">
+              <div>
+                <label
+                  htmlFor="verification-code"
+                  className="text-sm font-medium text-gray-300 mb-1 flex items-center"
+                >
+                  <KeyFill className="me-2 text-[#DA9060]" /> 請輸入驗證碼
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="verification-code"
+                    className="w-full px-4 py-2 ps-9 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DA9060] focus:border-transparent text-white placeholder-gray-400"
+                    value={verificationCode}
+                    onChange={(e) => {
+                      setVerificationCode(e.target.value);
+                      handleVerify(e.target.value); // Real-time verification
+                    }}
+                    placeholder="輸入驗證碼或社交媒體帳號"
+                  />
+                  <QrCode className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                </div>
               </div>
-              <div className="flex items-center px-3 py-2 rounded-md bg-gray-800/50 border border-gray-700">
-                <ShieldLockFill className="me-2 text-[#DA9060]" />
-                <span>安全使用</span>
+
+              {/* Message display area */}
+              {message && (
+                <>
+                  {status === "success" ? (
+                    <div className="mt-4 p-4 px-6 rounded-lg flex items-center bg-green-900/30 max-w-full">
+                      <CheckCircleFill className="me-5 scale-[2] text-green-400" />
+                      <div className="flex flex-col justify-start items-start flex-grow">
+                        <div className="font-medium text-green-400">驗證成功</div>
+                        <p className="text-green-300 opacity-90 break-words max-w-[88%] text-start">
+                          {message}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => {
+                          const account = searchAccount(verificationCode);
+                          if (account?.details) {
+                            setSelectedDetails(account.details);
+                            setIsModalOpen(true);
+                          }
+                        }}
+                        className="px-3 py-1 h-8 bg-[#DA9060] hover:bg-[#c27c4f] rounded-md text-sm flex items-center justify-center whitespace-nowrap"
+                      >
+                        <Info className="mr-2" /> 查看詳細
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="mt-4 p-4 px-6 rounded-lg flex items-center bg-red-900/30 max-w-full">
+                      <ExclamationTriangleFill className="me-5 scale-[2] text-red-400" />
+                      <div className="flex flex-col justify-start items-start">
+                        <div className="font-medium text-red-400">驗證失敗</div>
+                        <p className="text-red-300 opacity-90 break-words max-w-full">
+                          {message}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+
+            {/* Footer */}
+            <div className="mt-12 flex flex-col items-center">
+              <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#DA9060] to-transparent mb-6"></div>
+              <div className="flex items-center gap-4 text-gray-400 text-sm">
+                <div className="flex items-center px-3 py-2 rounded-md bg-gray-800/50 border border-gray-700">
+                  <LockFill className="me-2 text-[#DA9060]" />
+                  <span>支持官方</span>
+                </div>
+                <div className="flex items-center px-3 py-2 rounded-md bg-gray-800/50 border border-gray-700">
+                  <ShieldLockFill className="me-2 text-[#DA9060]" />
+                  <span>安全使用</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <DetailModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          details={selectedDetails}
+        />
       </div>
-      <DetailModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        details={selectedDetails}
-      />
-    </div>
+    </Suspense>
   );
 }
