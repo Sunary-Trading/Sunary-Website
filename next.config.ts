@@ -2,6 +2,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    assetPrefix: '/Sunary-Website/', // 根據你實際的 GitHub 頁面路徑來設置
     reactStrictMode: true,
     images: {
         remotePatterns: [
