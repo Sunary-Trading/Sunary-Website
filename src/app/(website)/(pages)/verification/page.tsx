@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   ShieldCheck,
   KeyFill,
@@ -75,6 +76,7 @@ const DetailModal = ({
 };
 
 export default function Verification() {
+  const searchParams = useSearchParams();
   const [verificationCode, setVerificationCode] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"success" | "error" | "">("");
@@ -93,11 +95,22 @@ export default function Verification() {
     if (verifiedAccount) {
       setMessage(`這是 ${verifiedAccount.person} 的 ${verifiedAccount.type}。`);
       setStatus("success");
+      if (verifiedAccount.details) {
+        setSelectedDetails(verifiedAccount.details);
+      }
     } else {
       setMessage("請確認驗證碼或社交媒體帳號是否正確。");
       setStatus("error");
     }
   };
+
+  useEffect(() => {
+    const code = searchParams.get("code");
+    if (code) {
+      setVerificationCode(code);
+      handleVerify(code);
+    }
+  }, [searchParams, handleVerify]);
 
   return (
     <div className="text-gray-100 min-h-screen">
