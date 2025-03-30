@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import ProgressBarProvider from "@/components/ProgressBarProvider"; // 新增的 Client Component
 import SEO from "@/config/SEO.json";
 
 export const metadata: Metadata = {
@@ -12,10 +11,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <ProgressBarProvider />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

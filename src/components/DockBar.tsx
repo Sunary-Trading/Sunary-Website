@@ -10,8 +10,8 @@ import {
 import { motion } from "framer-motion";
 import React, { ReactElement } from "react";
 import { Discord, Line, Telegram } from "react-bootstrap-icons";
+import { useCustomNavigation } from "./PageTransition";
 
-import Link from "next/link";
 import Image from "next/image";
 
 interface DockItem {
@@ -71,6 +71,7 @@ const dockOtherItems: DockItem[] = [
 
 export default function DockBar() {
   const pathname = usePathname();
+  const { handleRouteChange } = useCustomNavigation();
 
   return (
     <motion.div
@@ -89,18 +90,19 @@ export default function DockBar() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.9 }}
                 key={index}
-                className={`flex flex-col items-center  group border-2 p-[5px] rounded-[100%] cursor-pointer transition ${
+                onClick={() => handleRouteChange(item.path)}
+                className={`flex flex-col items-center group border-2 p-[5px] rounded-[100%] cursor-pointer transition ${
                   isActive
                     ? "bg-stone-700/50 border-none text-white"
                     : "border-stone-800/20 bg-stone-800/10"
                 } hover:scale-110 hover:bg-stone-600/60 duration-120`}
               >
-                <Link href={item.path} passHref className="flex items-center justify-center">
+                <div className="flex items-center justify-center">
                   <span className="absolute bottom-[50px] px-2 py-1 bg-white text-stone-800 font-medium text-[13px] rounded opacity-0 scale-100 group-hover:opacity-100 group-hover:!scale-98 transition whitespace-nowrap min-w-[60px] text-center">
                     {item.label}
                   </span>
                   <span>{item.icon}</span>
-                </Link>
+                </div>
               </motion.div>
             );
           })}
@@ -119,15 +121,15 @@ export default function DockBar() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.9 }}
                 key={index}
+                onClick={() => window.open(item.path, "_blank")}
                 className={`flex flex-col items-center group border-2 p-[4px] rounded-[100%] cursor-pointer transition border-stone-800/20 bg-stone-800/10 hover:scale-110 hover:bg-stone-600/60 duration-120`}
               >
-                <Link href={item.path} target="_blank" passHref className="flex items-center justify-center">
+                <div className="flex items-center justify-center">
                   <span className="absolute bottom-[50px] px-2 py-1 bg-white text-stone-800 font-medium text-[13px] rounded opacity-0 scale-100 group-hover:opacity-100 group-hover:!scale-98 transition whitespace-nowrap min-w-[60px] text-center">
                     {item.label}
                   </span>
-
                   <span>{item.icon}</span>
-                </Link>
+                </div>
               </motion.div>
             );
           })}
