@@ -57,11 +57,7 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      - name: Setup Yarn
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-        # Ensure Yarn is installed via the setup-node action
+      - name: Install Yarn
         run: npm install -g yarn
 
       - name: Setup Pages
