@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "cdn.sunary.tw",
             },
+            {
+                protocol: "https",
+                hostname: "www.ptdtw.fun",
+            },
         ],
     },
 };

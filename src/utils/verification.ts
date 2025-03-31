@@ -1,4 +1,4 @@
-import { verificationData, type VerificationData } from "@/data/verification";
+import { verificationData, type VerificationData } from "@/config/verification";
 
 function normalizeSocialLink(link: string): string {
     return link.toLowerCase()
