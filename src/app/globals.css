@@ -2,7 +2,7 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  --background: #1a1a1a;
+  --background: #0a0f18;
   --foreground: #ededed;
 }
 

@@ -65,7 +65,7 @@ const dockOtherItems: DockItem[] = [
   {
     icon: <Line className="w-[30px] h-auto" />,
     label: "加入Line群組",
-    path: "/courses",
+    path: "https://line.sunary.tw/",
   },
 ];
 

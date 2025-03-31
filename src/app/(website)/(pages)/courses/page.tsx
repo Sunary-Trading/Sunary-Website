@@ -137,7 +137,7 @@ const Agenda: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#131313] to-[#1c1c1c] pb-16 mb-3.5">
+    <div className="min-h-screen  pb-16 mb-3.5">
       {/* Top gradient line */}
       <div className="bg-gradient-to-r from-[#d58655] to-[#e0a47a] h-[3px]"></div>
       
@@ -157,7 +157,7 @@ const Agenda: React.FC = () => {
             <div
               className={`grid sticky top-0 z-20 transition-all duration-300 ${
                 isScrolled
-                  ? "py-2 bg-[#131313]/95 backdrop-blur-sm shadow-md"
+                  ? "py-2 bg-[#080c15]/55 backdrop-blur-sm shadow-md"
                   : "pt-[12px] bg-transparent"
               }`}
               style={{ gridTemplateColumns }}
