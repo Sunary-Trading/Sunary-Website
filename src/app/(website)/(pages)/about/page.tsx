@@ -23,9 +23,9 @@ export default function About() {
       <div className="relative w-full min-h-screen flex flex-col justify-center items-center text-center">
         <div>
           <h1 className="text-4xl font-bold">關於我們</h1>
-          <p className="mt-4 text-lg text-gray-700 max-w-2xl">
-            【注重長期獲利的 CRYPTO 交易團隊】交易心態｜現貨介紹｜長期套利 逐日
-            to the sun☀
+          <p className="mt-4 text-lg text-gray-700">
+            歡迎來到逐日交易聯盟，這是我們的交易團隊，我們是注重長期獲利CRYPTO團隊。
+            <br/>現在賠錢沒關係長期獲利才是勝利，來日方長🔥
           </p>
         </div>
 

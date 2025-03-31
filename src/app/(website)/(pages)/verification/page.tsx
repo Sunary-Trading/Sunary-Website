@@ -26,9 +26,11 @@ const DetailModal = ({
   onClose: () => void;
   details: Details | null;
 }) => {
+  if (!details) return null;
+
   return (
     <AnimatePresence>
-      {isOpen && details && (
+      {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -50,7 +52,7 @@ const DetailModal = ({
             <div className="space-y-2">
               {Object.entries(details.socialLinks).map(
                 ([platform, link]) =>
-                  link && (
+                  link && link !== "無" && (
                     <a
                       key={platform}
                       href={link}

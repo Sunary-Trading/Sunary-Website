@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import DockBar from "@/components/DockBar";
+import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 
 const geistSans = Geist({
@@ -24,8 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <PageTransition>
-          {children}
+          <div>
+            {children}
+          </div>
           <DockBar />
+          <Footer />
         </PageTransition>
       </body>
     </html>
