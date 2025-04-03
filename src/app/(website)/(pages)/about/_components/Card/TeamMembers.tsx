@@ -16,21 +16,27 @@ type Props = {
 const teamMembers = [
   {
 	name: "夏特稀",
-	role: "執行長兼共同創辦人",
+	role: "執行長 兼 共同創辦人",
 	image: "https://cdn.sunary.tw/Members/TershiXia.jpg",
 	description: "一個來自台灣的大學生，正在透過自己的信念，正努力達成夢想的人。",
   },
   {
 	name: "來日",
-	role: "執行長兼共同創辦人",
+	role: "執行長 兼 共同創辦人",
 	image: "https://cdn.sunary.tw/Members/xiaoyu.jpg",
 	description: "暫無",
   },
   {
 	name: "呱田",
-	role: "講師兼共同創辦人",
+	role: "講師 兼 共同創辦人",
 	image: "https://cdn.sunary.tw/Members/Gaga.png",
 	description: "暫無",
+  },
+  {
+	name: "糖豆魚",
+	role: "開發部工程師",
+	image: "https://www.ptdtw.fun/Avatars/avatar02.png",
+	description: "一個擁有五年開發經驗，追逐達成夢想的學生",
   },
   {
 	name: "Y",
@@ -39,10 +45,28 @@ const teamMembers = [
 	description: "暫無",
   },
   {
-	name: "糖豆魚",
-	role: "技術部工程師",
-	image: "https://www.ptdtw.fun/Avatars/avatar02.png",
-	description: "一個擁有五年開發經驗，追逐達成夢想的學生",
+	name: "小永",
+	role: "助理",
+	image: "https://cdn.sunary.tw/Members/wang.jpg",
+	description: "暫無",
+  },
+  {
+	name: "奇異果",
+	role: "講師",
+	image: "https://cdn.sunary.tw/Teacher/kilob.webp",
+	description: "暫無",
+  },
+  {
+	name: "Una",
+	role: "KOL",
+	image: "https://cdn.sunary.tw/KOL/una.jpg",
+	description: "暫無",
+  },
+  {
+	name: "寶寶狗",
+	role: "KOL",
+	image: "https://cdn.sunary.tw/KOL/bbg.jpg",
+	description: "暫無",
   },
 ];
 
