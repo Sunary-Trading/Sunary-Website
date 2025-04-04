@@ -51,7 +51,7 @@ const teamMembers = [
     role: "講師及分析師",
     image: "https://cdn.sunary.tw/Members/y.png",
     description:
-      "一個在交易市場中學習的大學生 <br/> - <br/>《時間與經驗會證明你所做的一切》",
+      "一個在交易市場中學習的大學生 \n - \n《時間與經驗會證明你所做的一切》",
   },
   {
     name: "奇異果",
@@ -65,14 +65,14 @@ const teamMembers = [
     role: "KOL",
     image: "https://cdn.sunary.tw/KOL/una.jpg",
     description:
-      "「承認自己的平凡 比假裝高手更需要勇氣」<br/>土狗玩家與空投項目分享<br/>運用自身的影響力，讓幣圈交流生態友善",
+      "「承認自己的平凡 比假裝高手更需要勇氣」\n土狗玩家與空投項目分享\n運用自身的影響力，讓幣圈交流生態友善",
   },
   {
     name: "寶寶狗",
     role: "KOL",
     image: "https://cdn.sunary.tw/KOL/bbg.jpg",
     description:
-      "31天實盤765%<br/>政治學系｜盤面與消息面分析<br/>努力精進提升自身的影響力，讓幣圈風氣更好",
+      "31天實盤765%\n政治學系｜盤面與消息面分析\n努力精進提升自身的影響力，讓幣圈風氣更好",
   },
 ];
 
@@ -105,7 +105,14 @@ export default function TeamMembers() {
             <p className="text-sm text-gray-400 mb-3 text-center">
               {member.role}
             </p>
-            <p className="text-gray-300">{member.description}</p>
+            <p className="text-gray-300">
+              {member.description.split("\n").map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </p>
           </div>
         ))}
       </div>
@@ -134,7 +141,14 @@ export default function TeamMembers() {
               <p className="text-xs text-gray-400 mb-3 text-center">
                 {member.role}
               </p>
-              <p className="text-gray-300 text-sm">{member.description}</p>
+              <p className="text-gray-300">
+                {member.description.split("\n").map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </p>
             </div>
           ))}
         </div>
