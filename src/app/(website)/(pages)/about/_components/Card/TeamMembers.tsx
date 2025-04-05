@@ -58,7 +58,7 @@ const teamMembers = [
     role: "講師及分析師",
     image: "https://cdn.sunary.tw/Teacher/kilob.webp",
     description:
-      "「交易的本質就是場賭博，而我的所學就只是提高自己在這場賭博的勝率而已」",
+      "在交易的道路上有自己的小堅持，擁有各大自營商資助證明，例如：Topstep、Fundednext等等\n同時也擁有多次出金經驗，最高曾一個月單靠自營商平台出金數十萬台幣，是個以長期盈利為目標的交易者",
   },
   {
     name: "Una",
