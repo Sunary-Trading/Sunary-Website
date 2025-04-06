@@ -89,6 +89,12 @@ const fragment = /* glsl */ `
   }
 `;
 
+const isMobile = () => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    typeof window !== "undefined" ? window.navigator.userAgent : ""
+  );
+};
+
 const Particles: React.FC<ParticlesProps> = ({
   particleCount = 200,
   particleSpread = 10,
@@ -110,7 +116,17 @@ const Particles: React.FC<ParticlesProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const renderer = new Renderer({ depth: false, alpha: true });
+    const mobile = isMobile();
+    const actualParticleCount = mobile ? Math.floor(particleCount * 0.4) : particleCount;
+    const actualSpeed = mobile ? speed * 0.5 : speed;
+    const actualParticleSpread = mobile ? particleSpread * 0.8 : particleSpread;
+    const actualBaseSize = mobile ? particleBaseSize * 0.8 : particleBaseSize;
+
+    const renderer = new Renderer({ 
+      depth: false, 
+      alpha: true,
+      powerPreference: mobile ? 'low-power' : 'high-performance'
+    });
     const gl = renderer.gl;
     container.appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
@@ -138,7 +154,7 @@ const Particles: React.FC<ParticlesProps> = ({
       container.addEventListener("mousemove", handleMouseMove);
     }
 
-    const count = particleCount;
+    const count = actualParticleCount;
     const positions = new Float32Array(count * 3);
     const randoms = new Float32Array(count * 4);
     const colors = new Float32Array(count * 3);
@@ -170,8 +186,8 @@ const Particles: React.FC<ParticlesProps> = ({
       fragment,
       uniforms: {
         uTime: { value: 0 },
-        uSpread: { value: particleSpread },
-        uBaseSize: { value: particleBaseSize },
+        uSpread: { value: actualParticleSpread },
+        uBaseSize: { value: actualBaseSize },
         uSizeRandomness: { value: sizeRandomness },
         uAlphaParticles: { value: alphaParticles ? 1 : 0 },
       },
@@ -189,22 +205,24 @@ const Particles: React.FC<ParticlesProps> = ({
       animationFrameId = requestAnimationFrame(update);
       const delta = t - lastTime;
       lastTime = t;
-      elapsed += delta * speed;
+      elapsed += delta * actualSpeed;
+
+      if (mobile && elapsed % 2 !== 0) {
+        return;
+      }
 
       program.uniforms.uTime.value = elapsed * 0.001;
 
-      if (moveParticlesOnHover) {
+      if (moveParticlesOnHover && !mobile) {
         particles.position.x = -mouseRef.current.x * particleHoverFactor;
         particles.position.y = -mouseRef.current.y * particleHoverFactor;
-      } else {
-        particles.position.x = 0;
-        particles.position.y = 0;
       }
 
       if (!disableRotation) {
-        particles.rotation.x = Math.sin(elapsed * 0.0002) * 0.1;
-        particles.rotation.y = Math.cos(elapsed * 0.0005) * 0.15;
-        particles.rotation.z += 0.01 * speed;
+        const rotationSpeed = mobile ? 0.5 : 1;
+        particles.rotation.x = Math.sin(elapsed * 0.0002) * 0.1 * rotationSpeed;
+        particles.rotation.y = Math.cos(elapsed * 0.0005) * 0.15 * rotationSpeed;
+        particles.rotation.z += 0.01 * actualSpeed * rotationSpeed;
       }
 
       renderer.render({ scene: particles, camera });

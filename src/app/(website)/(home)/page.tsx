@@ -9,10 +9,10 @@ export default function Home() {
     <div className="h-screen w-screen">
       <Particles
         particleColors={["#da9060", "#da9060"]}
-        particleCount={700}
-        particleSpread={8}
-        speed={0.2}
-        particleBaseSize={200}
+        particleCount={400}
+        particleSpread={6}
+        speed={0.15}
+        particleBaseSize={150}
         moveParticlesOnHover={true}
         alphaParticles={false}
         disableRotation={false}
