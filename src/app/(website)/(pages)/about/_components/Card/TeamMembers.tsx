@@ -65,7 +65,7 @@ const teamMembers = [
     role: "KOL",
     image: "https://cdn.sunary.tw/KOL/una.jpg",
     description:
-      "「承認自己的平凡 比假裝高手更需要勇氣」\n土狗玩家與空投項目分享\n運用自身的影響力，讓幣圈交流生態友善",
+      "「承認自己的平凡 比假裝高手更需要勇氣」\n土狗玩家與空投項目分享",
   },
   {
     name: "寶寶狗",
