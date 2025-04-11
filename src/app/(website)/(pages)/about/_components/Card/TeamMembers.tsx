@@ -35,7 +35,7 @@ const teamMembers = [
   },
   {
     name: "糖豆魚",
-    role: "開發部工程師",
+    role: "技術部經理",
     image: "https://www.ptdtw.fun/Avatars/avatar02.png",
     description: "一個擁有五年開發經驗，追逐達成夢想的學生",
   },
