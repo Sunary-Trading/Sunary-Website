@@ -13,13 +13,6 @@ type Props = {
 
 const teamMembers = [
   {
-    name: "夏特稀",
-    role: "執行長 兼 共同創辦人",
-    image: "https://cdn.sunary.tw/Members/TershiXia.jpg",
-    description:
-      "一個來自台灣的大學生，正在透過自己的信念，正努力達成夢想的人。",
-  },
-  {
     name: "來日",
     role: "執行長 兼 共同創辦人",
     image: "https://cdn.sunary.tw/Members/xiaoyu.jpg",
@@ -32,12 +25,6 @@ const teamMembers = [
     image: "https://cdn.sunary.tw/Members/Gaga.png",
     description:
       "在幣圈各大社群活躍擁有許多戰績，絲毫不藏私也不吝嗇分享市場分析觀點，在逐日以自身經驗傳授多元分析知識與技術。",
-  },
-  {
-    name: "糖豆魚",
-    role: "技術部經理",
-    image: "https://www.ptdtw.fun/Avatars/avatar02.png",
-    description: "一個擁有五年開發經驗，追逐達成夢想的學生",
   },
   {
     name: "小永",
