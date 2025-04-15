@@ -20,6 +20,13 @@ const teamMembers = [
       "一位就讀設計系的大學生，在進入幣圈後，因感受到圈內互相批判與勢利的惡劣風氣，決定創立「逐日團隊」，並統整各方資源，致力於打造一個溫暖、友善且平等的交流環境。",
   },
   {
+    name: "夏特稀",
+    role: "執行長 兼 共同創辦人",
+    image: "https://cdn.sunary.tw/Members/TershiXia.jpg",
+    description:
+      "一個來自台灣的大學生，正在透過自己的信念，正努力達成夢想的人。",
+  },
+  {
     name: "呱田",
     role: "講師 兼 共同創辦人",
     image: "https://cdn.sunary.tw/Members/Gaga.png",
@@ -32,6 +39,12 @@ const teamMembers = [
     image: "https://cdn.sunary.tw/Members/wang.jpg",
     description:
       "熱愛交易，為了在 交流中成長而無償加入，成為團隊助理，協助團隊事務及社群環境秩序維護。",
+  },
+  {
+    name: "糖豆魚",
+    role: "開發部工程師",
+    image: "https://www.ptdtw.fun/Avatars/avatar02.png",
+    description: "一個擁有五年開發經驗，追逐達成夢想的學生",
   },
   {
     name: "Y",
