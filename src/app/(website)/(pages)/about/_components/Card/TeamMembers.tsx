@@ -15,28 +15,28 @@ const teamMembers = [
   {
     name: "來日",
     role: "執行長 兼 共同創辦人",
-    image: "https://cdn.sunary.tw/Members/xiaoyu.jpg",
+    image: "https://sunary-cdn2.pages.dev/Members/xiaoyu.jpg",
     description:
       "一位就讀設計系的大學生，在進入幣圈後，因感受到圈內互相批判與勢利的惡劣風氣，決定創立「逐日團隊」，並統整各方資源，致力於打造一個溫暖、友善且平等的交流環境。",
   },
   {
     name: "夏特稀",
     role: "執行長 兼 共同創辦人",
-    image: "https://cdn.sunary.tw/Members/TershiXia.jpg",
+    image: "https://sunary-cdn2.pages.dev/Members/TershiXia.jpg",
     description:
       "一個來自台灣的大學生，正在透過自己的信念，正努力達成夢想的人。",
   },
   {
     name: "呱田",
     role: "講師 兼 共同創辦人",
-    image: "https://cdn.sunary.tw/Members/Gaga.png",
+    image: "https://sunary-cdn2.pages.dev/Members/Gaga.png",
     description:
       "在幣圈各大社群活躍擁有許多戰績，絲毫不藏私也不吝嗇分享市場分析觀點，在逐日以自身經驗傳授多元分析知識與技術。",
   },
   {
     name: "小永",
     role: "助理",
-    image: "https://cdn.sunary.tw/Members/wang.jpg",
+    image: "https://sunary-cdn2.pages.dev/Members/wang.jpg",
     description:
       "熱愛交易，為了在 交流中成長而無償加入，成為團隊助理，協助團隊事務及社群環境秩序維護。",
   },
@@ -49,28 +49,28 @@ const teamMembers = [
   {
     name: "Y",
     role: "講師及分析師",
-    image: "https://cdn.sunary.tw/Members/y.png",
+    image: "https://sunary-cdn2.pages.dev/Members/y.png",
     description:
       "一個在交易市場中學習的大學生 \n - \n《時間與經驗會證明你所做的一切》",
   },
   {
     name: "奇異果",
     role: "講師及分析師",
-    image: "https://cdn.sunary.tw/Teacher/kilob.webp",
+    image: "https://sunary-cdn2.pages.dev/Teacher/kilob.webp",
     description:
       "在交易的道路上有自己的小堅持，擁有各大自營商資助證明，例如：Topstep、Fundednext等等\n同時也擁有多次出金經驗，最高曾一個月單靠自營商平台出金數十萬台幣，是個以長期盈利為目標的交易者",
   },
   {
     name: "Una",
     role: "KOL",
-    image: "https://cdn.sunary.tw/KOL/una.jpg",
+    image: "https://sunary-cdn2.pages.dev/KOL/una.jpg",
     description:
       "「承認自己的平凡 比假裝高手更需要勇氣」\n土狗玩家與空投項目分享",
   },
   {
     name: "寶寶狗",
     role: "KOL",
-    image: "https://cdn.sunary.tw/KOL/bbg.jpg",
+    image: "https://sunary-cdn2.pages.dev/KOL/bbg.jpg",
     description:
       "31天實盤765%\n政治學系｜盤面與消息面分析\n努力精進提升自身的影響力，讓幣圈風氣更好",
   },

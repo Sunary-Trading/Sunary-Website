@@ -11,7 +11,7 @@ import {
   Discord,
   Line,
 } from "react-bootstrap-icons";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import Image from "next/image";
 
@@ -33,9 +33,8 @@ const Footer = () => {
         if (gradientElement) {
           const scrollPosition = window.scrollY;
           const offset = scrollPosition * 0.03;
-          gradientElement.style.transform = `translate(-50%, -50%) scale(${
-            1 + offset * 0.01
-          })`;
+          gradientElement.style.transform = `translate(-50%, -50%) scale(${1 + offset * 0.01
+            })`;
         }
       }
     };
@@ -102,7 +101,7 @@ const Footer = () => {
           >
             <div className="inline-flex items-center space-x-2 mb-6">
               <Image
-                src={"https://cdn.sunary.tw/logo_r.png"}
+                src={"https://sunary-cdn2.pages.dev/logo_r.png"}
                 width={32}
                 height={32}
                 alt="logo"

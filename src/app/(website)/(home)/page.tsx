@@ -2,7 +2,7 @@
 import Threads from "@/components/Background/Thread";
 import Particles from "@/components/Background/Particles";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function Home() {
   return (

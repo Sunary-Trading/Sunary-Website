@@ -43,7 +43,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
           className="bg absolute w-full h-full bg-gradient-to-br from-[#262626] to-[#454545] rounded-full"
         ></div>
         <img
-          src="https://cdn.sunary.tw/logo_r.png"
+          src="https://sunary-cdn2.pages.dev/logo_r.png"
           alt="Logo"
           className="img w-20 h-20 object-contain relative"
         />

@@ -7,7 +7,7 @@ import {
   CheckCheck,
   Building2,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import React, { ReactElement, useState } from "react";
 import { Discord, Line, Telegram } from "react-bootstrap-icons";
 import { useCustomNavigation } from "./PageTransition";
@@ -24,7 +24,7 @@ const dockItems: DockItem[] = [
   {
     icon: (
       <Image
-        src={"https://cdn.sunary.tw/logo_r.png"}
+        src={"https://sunary-cdn2.pages.dev/logo_r.png"}
         width={38}
         height={38}
         alt="Logo"
@@ -88,12 +88,12 @@ export default function DockBar() {
       const scrollY = window.scrollY;
       const viewportHeight = window.innerHeight;
       const footerOffsetTop = footer.offsetTop;
-      const threshold = 10; 
+      const threshold = 10;
 
       const distanceToFooter = footerOffsetTop - (scrollY + viewportHeight);
 
       setIsFixed(true);
-      
+
       if (distanceToFooter <= threshold) {
         // 當接近footer時，調整bottom值使其保持在footer上方50px處
         const newBottom = Math.max(10, threshold - distanceToFooter - 10);
@@ -198,9 +198,8 @@ export default function DockBar() {
           ease: [0.19, 1, 0.22, 1],
           delay: 0.2,
         }}
-        className={`${
-          isFixed ? "fixed" : "absolute"
-        } left-1/2 transform -translate-x-1/2 mb-2 z-50`}
+        className={`${isFixed ? "fixed" : "absolute"
+          } left-1/2 transform -translate-x-1/2 mb-2 z-50`}
         style={isFixed ? { bottom: "10px" } : { top: absoluteTop }}
       >
         <motion.div
@@ -224,11 +223,10 @@ export default function DockBar() {
                   initial="normal"
                   whileHover="hover"
                   whileTap="tap"
-                  className={`flex flex-col items-center group border-2 p-[5px] rounded-[100%] cursor-pointer transition ${
-                    isActive
+                  className={`flex flex-col items-center group border-2 p-[5px] rounded-[100%] cursor-pointer transition ${isActive
                       ? "bg-stone-700/50 border-none text-white"
                       : "border-stone-800/20 bg-stone-800/10"
-                  } duration-300 relative overflow-visible`}
+                    } duration-300 relative overflow-visible`}
                 >
                   <div className="flex items-center justify-center">
                     <motion.span

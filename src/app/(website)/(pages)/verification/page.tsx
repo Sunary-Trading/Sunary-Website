@@ -11,7 +11,7 @@ import {
   ShieldLockFill,
   Info,
 } from "react-bootstrap-icons";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { type VerificationDetails as Details } from "@/config/verification";
 import { searchAccount } from "@/utils/verification";
 import Image from "next/image"; // Import Next.js Image component
